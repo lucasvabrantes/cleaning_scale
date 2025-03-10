@@ -6,11 +6,19 @@
   "dependencies": {
     "express": "^4.21.2"
   },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "3.5.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.2"
   }
